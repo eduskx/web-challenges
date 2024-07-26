@@ -3,15 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { uid } from "uid";
-import styled from "styled-components";
-
-const DetailPage = styled.html`
-  background-color: red;
-`;
 
 export default function VolumeDetail() {
   const router = useRouter();
   const { slug } = router.query;
+  console.log(router);
 
   const data = volumes.find((element) => element.slug === slug);
   const currentIndex = volumes.findIndex((element) => element.slug === slug);
@@ -24,7 +20,7 @@ export default function VolumeDetail() {
     return null;
   }
   return (
-    <DetailPage>
+    <div>
       <Link href="/volumes">← All Volumes</Link>
       <h1>{data.title}</h1>
       <p>{data.description}</p>
@@ -58,6 +54,6 @@ export default function VolumeDetail() {
       >
         Next
       </Link>
-    </DetailPage>
+    </div>
   );
 }

@@ -6,6 +6,7 @@ import { uid } from "uid";
 
 export default function Volumes() {
   const router = useRouter();
+  console.log("router: ", router);
 
   function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
